@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+    
+    <managed-bean>
+        <managed-bean-name>bolsistaBean</managed-bean-name>
+        <managed-bean-class>control.BolsistaMB</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>setorBean</managed-bean-name>
+        <managed-bean-class>control.SetorMB</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+     <managed-bean>
+        <managed-bean-name>escalaBean</managed-bean-name>
+        <managed-bean-class>control.EscalaMB</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <navigation-rule>
+    	<from-view-id>index.xhtml</from-view-id>
+    		<navigation-case>
+    			<from-outcome>cadastrarBolsista</from-outcome>
+    			<to-view-id>/cadastrarBolsista.xhtml</to-view-id> 		
+    		</navigation-case>  
+    		<navigation-case>
+    			<from-outcome>pesquisarBolsista</from-outcome>
+    			<to-view-id>/pesquisarBolsista.xhtml</to-view-id> 		
+    		</navigation-case>  
+    		<navigation-case>
+    			<from-outcome>alterarBolsista</from-outcome>
+    			<to-view-id>/alterarBolsista.xhtml</to-view-id> 		
+    		</navigation-case>  
+    		<navigation-case>
+    			<from-outcome>cadastrarSetor</from-outcome>
+    			<to-view-id>/cadastrarSetor.xhtml</to-view-id> 		
+    		</navigation-case>   
+    		<navigation-case>
+    			<from-outcome>pesquisarSetor</from-outcome>
+    			<to-view-id>/pesquisarSetor.xhtml</to-view-id> 		
+    		</navigation-case>  
+    		<navigation-case>
+    			<from-outcome>alterarSetor</from-outcome>
+    			<to-view-id>/alterarSetor.xhtml</to-view-id> 		
+    		</navigation-case> 
+    		
+    				
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>cadastrarBolsista.xhtml</from-view-id>
+    		<navigation-case>
+    			<from-outcome>voltar</from-outcome>
+    			<to-view-id>index.xhtml</to-view-id> 		
+    		</navigation-case>  
+    		<navigation-case>
+    			<from-outcome>salvar</from-outcome>
+    			<to-view-id>sucesso.xhtml</to-view-id> 		
+    		</navigation-case> 	
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>pesquisarBolsista.xhtml</from-view-id>
+    		<navigation-case>
+    			<from-outcome>pesquisarBolsista</from-outcome>
+    			<to-view-id>/pesquisarBolsista2.xhtml</to-view-id> 		
+    		</navigation-case>  
+    		<navigation-case>
+    			<from-outcome>voltar</from-outcome>
+    			<to-view-id>index.xhtml</to-view-id> 		
+    		</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>pesquisarBolsista2.xhtml</from-view-id>
+    		<navigation-case>
+    			<from-outcome>voltar</from-outcome>
+    			<to-view-id>pesquisarBolsista.xhtml</to-view-id> 		
+    		</navigation-case>
+    		
+    		<navigation-case>
+    			<from-outcome>alterar</from-outcome>
+    			<to-view-id>alterarBolsista.xhtml</to-view-id> 		
+    		</navigation-case>
+    		
+    		<navigation-case>
+    			<from-outcome>remover</from-outcome>
+    			<to-view-id>sucesso.xhtml</to-view-id> 		
+    		</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>alterarBolsista.xhtml</from-view-id>
+    		<navigation-case>
+    			<from-outcome>alterar2</from-outcome>
+    			<to-view-id>sucesso.xhtml</to-view-id> 		
+    		</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>cadastrarSetor.xhtml</from-view-id>
+    		<navigation-case>
+    			<from-outcome>voltar</from-outcome>
+    			<to-view-id>index.xhtml</to-view-id> 		
+    		</navigation-case>  
+    		<navigation-case>
+    			<from-outcome>salvar</from-outcome>
+    			<to-view-id>sucesso.xhtml</to-view-id> 		
+    		</navigation-case> 	
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>pesquisarSetor.xhtml</from-view-id>
+    		<navigation-case>
+    			<from-outcome>pesquisarSetor</from-outcome>
+    			<to-view-id>/pesquisarSetor2.xhtml</to-view-id> 		
+    		</navigation-case>  
+    		<navigation-case>
+    			<from-outcome>voltar</from-outcome>
+    			<to-view-id>index.xhtml</to-view-id> 		
+    		</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>pesquisarSetor2.xhtml</from-view-id>
+    		<navigation-case>
+    			<from-outcome>voltar</from-outcome>
+    			<to-view-id>pesquisarSetor.xhtml</to-view-id> 		
+    		</navigation-case>
+    		
+    		<navigation-case>
+    			<from-outcome>alterar</from-outcome>
+    			<to-view-id>alterarSetor.xhtml</to-view-id> 		
+    		</navigation-case>
+    		
+    		<navigation-case>
+    			<from-outcome>remover</from-outcome>
+    			<to-view-id>sucesso.xhtml</to-view-id> 		
+    		</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>sucesso.xhtml</from-view-id>
+    		<navigation-case>
+    			<from-outcome>voltar</from-outcome>
+    			<to-view-id>index.xhtml</to-view-id> 		
+    		</navigation-case>     		 	
+    </navigation-rule>
+
+</faces-config>

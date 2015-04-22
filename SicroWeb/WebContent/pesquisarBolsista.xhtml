@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:c="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Pesquisar Bolsistas</title>
+</h:head>
+<h:body>
+
+	<h:outputText value="Lista Bolsistas" />
+	<br />
+	<br />
+	<h:form>
+			
+			<p:outputLabel value="Matrícula:" />
+			<p:inputText id="matricula" value="#{bolsistaBean.bolsista.matricula}" size="30" />
+			<h:message for="matricula" />
+			<br />
+			<br />
+			<h:commandButton id="btnP" value="Pesquisar" type="submit" action="#{bolsistaBean.pesquisar}" /> 
+			
+			<h:commandButton id="btnV" value="Voltar" type="submit" action="#{bolsistaBean.voltar}" /> 
+			
+	</h:form>
+</h:body>
+</html>

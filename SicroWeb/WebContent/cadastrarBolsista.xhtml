@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:c="http://java.sun.com/jsf/core"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastrar Bolsistas</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="3">
+			<p:outputLabel value="Matrícula:" />
+			<p:inputText id="matricula" value="#{bolsistaBean.bolsista.matricula}" size="30" />
+			<p:message for="matricula" />
+
+			<p:outputLabel value="Nome:" />
+			<p:inputText id="nome" value="#{bolsistaBean.bolsista.nome}" size="30" />
+			<p:message for="nome" />
+			
+			<p:outputLabel value="Turno:" />
+			<p:inputText id="turno" value="#{bolsistaBean.bolsista.turno}" size="30" />
+			<p:message for="turno" />
+			
+			<p:outputLabel value="Início:" />
+            <p:calendar id="horaInicio" value="#{bolsistaBean.bolsista.horInicio}" pattern="HH:mm a" timeOnly="true" size="30"/>	
+			
+			<!--<p:outputLabel value="Hora de Saída: " />
+        	<p:inputMask id="horaS" value="#{viagemBean.viagem.horaSaida}" mask="99:99"/>  -->	
+			
+						
+			<!--<p:outputLabel value="Hora de Chegada: " />
+        	<p:inputMask id="horaC" value="#{viagemBean.viagem.horaChegada}" mask="99:99"/>-->
+			
+			
+			<p:outputLabel value="Término:" />
+            <p:calendar id="horaTermino" value="#{bolsistaBean.bolsista.horFim}" pattern="HH:mm a" timeOnly="true" size="30" />
+					
+			<br></br><br></br>	    						
+			<h:commandButton id="btnS" value="Salvar" type="submit" action="#{bolsistaBean.salvar}" />
+			<h:commandButton id="btnV" value="Voltar" type="submit" action ="#{bolsistaBean.voltar}" />
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

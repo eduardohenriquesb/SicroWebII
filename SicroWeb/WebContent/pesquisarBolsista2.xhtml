@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:c="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Pesquisar Bolsistas</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="4">
+			
+			<h:dataTable id="tableBolsistas" value="#{bolsistaBean.bolsistas}" var="b"
+				title=" Bolsistas Cadastrados" border="1" rows="20" rendered="#{!empty bolsistaBean.bolsistas}">
+				
+			<h:column>
+				<c:facet name="header">Matrícula</c:facet>
+					#{b.matricula} 
+				</h:column>
+				
+				<h:column>
+					<c:facet name="header">Nome</c:facet>
+					#{b.nome} 
+				</h:column>
+				
+				<h:column>
+					<c:facet name="header">Turno</c:facet>
+					#{b.turno} 
+				</h:column>
+				
+				<h:column>
+					<c:facet name="header">Horário Início</c:facet>
+					#{b.horInicio} 
+				</h:column>
+				
+				<h:column>
+					<c:facet name="header">Horário Saída</c:facet>
+					#{b.horFim} 
+				</h:column>
+				
+			
+				<h:column>
+					<c:facet name="header">
+						<h:outputText value="ALTERAR" />
+					</c:facet>
+					
+					<h:commandButton id ="btnA" value="Alterar" type="submit" action="#{bolsistaBean.alterar}">
+					<c:setPropertyActionListener value="#{b}"  target="#{bolsistaBean.bolsista}" />
+					</h:commandButton>
+				</h:column>
+				
+				<h:column>
+					<c:facet name="header">
+						<h:outputText value="EXCLUIR" />
+					</c:facet>
+					
+					<h:commandButton id ="btnE" value="Excluir" type="submit" action="#{bolsistaBean.remover}">
+					<c:setPropertyActionListener value="#{b}"  target="#{bolsistaBean.bolsista}" />
+					</h:commandButton>
+				</h:column>
+				
+			</h:dataTable>
+		
+		</h:panelGrid>
+		<h:commandLink value="Voltar"  action="#{bolsistaBean.voltar}" />
+		
+	</h:form>
+
+</h:body>
+</html>
